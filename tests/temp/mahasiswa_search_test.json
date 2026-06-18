@@ -1,0 +1,18 @@
+[
+    {
+        "nim": "20231001",
+        "nama": "Budi Santoso",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.75,
+        "email": "budi@example.com",
+        "no_hp": "081234567890"
+    },
+    {
+        "nim": "20231002",
+        "nama": "Ani Rahma",
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.9,
+        "email": "ani@example.com",
+        "no_hp": "081111111111"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "nim": "20231001",
+        "nama": "Budi Santoso",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.75,
+        "email": "budi@example.com",
+        "no_hp": "081234567890"
+    }
+]

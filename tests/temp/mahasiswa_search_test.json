@@ -1,0 +1,98 @@
+[
+    {
+        "nim": "210001",
+        "nama": "Ayu Lestari",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.75,
+        "email": "ayu@example.com",
+        "no_hp": "081234567801"
+    },
+    {
+        "nim": "210002",
+        "nama": "Budi Santoso",
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.6,
+        "email": "budi@example.com",
+        "no_hp": "081234567802"
+    },
+    {
+        "nim": "210003",
+        "nama": "Citra Dewi",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.85,
+        "email": "citra@example.com",
+        "no_hp": "081234567803"
+    },
+    {
+        "nim": "210004",
+        "nama": "Doni Pratama",
+        "jurusan": "Manajemen Informatika",
+        "ipk": 3.5,
+        "email": "doni@example.com",
+        "no_hp": "081234567804"
+    },
+    {
+        "nim": "210005",
+        "nama": "Eka Putri",
+        "jurusan": "Teknik Komputer",
+        "ipk": 3.7,
+        "email": "eka@example.com",
+        "no_hp": "081234567805"
+    },
+    {
+        "nim": "210006",
+        "nama": "Fajar Nugroho",
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.65,
+        "email": "fajar@example.com",
+        "no_hp": "081234567806"
+    },
+    {
+        "nim": "210007",
+        "nama": "Gita Ramadhani",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.9,
+        "email": "gita@example.com",
+        "no_hp": "081234567807"
+    },
+    {
+        "nim": "210008",
+        "nama": "Hendra Wijaya",
+        "jurusan": "Teknik Elektro",
+        "ipk": 3.55,
+        "email": "hendra@example.com",
+        "no_hp": "081234567808"
+    },
+    {
+        "nim": "210009",
+        "nama": "Indah Permata",
+        "jurusan": "Manajemen Informatika",
+        "ipk": 3.8,
+        "email": "indah@example.com",
+        "no_hp": "081234567809"
+    },
+    {
+        "nim": "210010",
+        "nama": "Joko Widodo",
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.45,
+        "email": "joko@example.com",
+        "no_hp": "081234567810"
+    },
+    {
+        "nim": "20231001",
+        "nama": "Budi Santoso",
+        "jurusan": "Teknik Informatika",
+        "ipk": 3.75,
+        "email": "budi@example.com",
+        "no_hp": "081234567890"
+    },
+    {
+        "nim": "20231002",
+        "nama": "Ani Rahma",
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.9,
+        "email": "ani@example.com",
+        "no_hp": "081111111111"
+    }
+]

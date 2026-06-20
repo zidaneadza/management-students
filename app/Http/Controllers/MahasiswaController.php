@@ -23,10 +23,10 @@ class MahasiswaController extends BaseController
 
     public function index(Request $request): View
     {
-        $keyword = $request->input('keyword', '');
-        $search_type = $request->input('search_type', 'linear');
-        $sort_field = $request->input('sort_field', '');
-        $sort_algo = $request->input('sort_algo', 'bubble');
+        $keyword = (string) $request->input('keyword', '');
+        $search_type = (string) $request->input('search_type', 'linear');
+        $sort_field = (string) $request->input('sort_field', '');
+        $sort_algo = (string) $request->input('sort_algo', 'bubble');
 
         $mahasiswas = $this->mahasiswaService->getAll();
 

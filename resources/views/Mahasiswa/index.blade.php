@@ -702,9 +702,9 @@
                             </div>
                         </div>
 
-                        <div class="filter-actions-row" style="margin-top: 1.25rem;">
-                            <button type="submit" class="btn btn-apply">Terapkan</button>
-                            <a href="{{ route('mahasiswa.index') }}" class="btn btn-reset">Reset</a>
+                        <div class="filter-actions-row" style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; width: 100%; box-sizing: border-box;">
+                            <button type="submit" style="width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; border-radius: 0.5rem; font-weight: 500; font-size: 0.875rem; text-align: center; border: none; cursor: pointer; background-color: #1e3a8a; color: white; display: block;">Terapkan</button>
+                            <a href="{{ route('mahasiswa.index') }}" style="width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; border-radius: 0.5rem; font-weight: 500; font-size: 0.875rem; text-align: center; text-decoration: none; cursor: pointer; background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; display: block;">Reset</a>
                         </div>
                     </form>
                 </div>

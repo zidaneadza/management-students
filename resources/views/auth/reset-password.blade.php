@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password - Manajemen Mahasiswa</title>
     <style>
-        body { font-family: Arial, sans-serif; background: url('{{ asset('background.jpg') }}') center/cover no-repeat; background-color: #eef2ff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1rem; }
+        body { font-family: Arial, sans-serif; background-color: #eef2ff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1rem; }
         .card { background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 24px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18); width: min(100%, 440px); max-width: 440px; border: 1px solid rgba(229, 231, 235, 0.9); }
         label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
         input { width: 100%; padding: 0.95rem; margin-bottom: 1rem; border: 1px solid #d1d5db; border-radius: 14px; box-sizing: border-box; font-size: 1rem; }

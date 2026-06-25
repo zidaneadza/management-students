@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
      */
     public function test_the_application_returns_a_successful_response(): void
     {
-        $response = $this->get('/');
+        $response = $this->withSession(['is_logged_in' => true])->get('/');
 
         $response->assertStatus(200);
     }

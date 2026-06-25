@@ -14,7 +14,7 @@ class StoreMahasiswaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nim' => ['required', 'regex:/^\d{8,10}$/'],
+            'nim' => ['required', 'regex:/^\d{8,15}$/'],
             'nama' => ['required', 'regex:/^[A-Za-z\s]+$/'],
             'jurusan' => ['required', 'regex:/^[A-Za-z\s]+$/'],
             'ipk' => ['required', 'numeric', 'between:0,4'],

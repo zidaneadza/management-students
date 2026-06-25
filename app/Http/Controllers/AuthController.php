@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class AuthController extends BaseController
 {
     public function showLoginForm(): View
@@ -30,9 +33,9 @@ class AuthController extends BaseController
             'password' => ['required', 'string'],
         ]);
 
-        $storedPassword = session('password', 'admin123');
+        $user = DB::table('users')->where('username', $credentials['username'])->first();
 
-        if (($credentials['username'] === 'admin') && ($credentials['password'] === $storedPassword)) {
+        if ($user && Hash::check($credentials['password'], $user->password)) {
             session([
                 'is_logged_in' => true,
                 'username' => $credentials['username'],
@@ -53,8 +56,15 @@ class AuthController extends BaseController
             'new_password' => ['required', 'string', 'min:6'],
         ]);
 
-        if ($data['username'] === 'admin') {
-            session(['password' => $data['new_password']]);
+        $user = DB::table('users')->where('username', $data['username'])->first();
+
+        if ($user) {
+            DB::table('users')
+                ->where('username', $data['username'])
+                ->update([
+                    'password' => Hash::make($data['new_password']),
+                    'updated_at' => now(),
+                ]);
 
             return redirect()->route('login')->with('status', 'Password berhasil direset.');
         }

@@ -24,14 +24,16 @@ class MahasiswaServiceTest extends TestCase
         $storageService = new FileStorageService($filePath);
         $service = new MahasiswaService($storageService);
 
+        $initialCount = count($service->getAll());
+
         $mahasiswa = new Mahasiswa('20231001', 'Budi Santoso', 'Teknik Informatika', 3.75, 'budi@example.com', '081234567890');
         $service->store($mahasiswa);
 
         $students = $service->getAll();
 
-        $this->assertCount(1, $students);
-        $this->assertSame('Budi Santoso', $students[0]->getNama());
-        $this->assertSame('20231001', $students[0]->getNim());
+        $this->assertCount($initialCount + 1, $students);
+        $this->assertSame('Budi Santoso', end($students)->getNama());
+        $this->assertSame('20231001', end($students)->getNim());
     }
 
     public function test_it_can_search_mahasiswa_by_nim(): void

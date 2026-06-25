@@ -153,13 +153,49 @@ class MahasiswaController extends BaseController
         }
 
         if ($format === 'pdf') {
-            $content = "Export PDF belum tersedia di demo ini.\n";
-            return response($content, 200, ['Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="mahasiswa.pdf"']);
+            $html = '<html><head><title>Data Mahasiswa</title>';
+            $html .= '<style>
+                body { font-family: sans-serif; padding: 20px; color: #333; }
+                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                th, td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 14px; }
+                th { background-color: #f5f5f5; font-weight: bold; }
+                h2 { text-align: center; margin-bottom: 5px; }
+                p { text-align: center; color: #666; font-size: 12px; margin-top: 0; }
+            </style></head><body onload="window.print()">';
+            $html .= '<h2>Daftar Mahasiswa</h2>';
+            $html .= '<p>Dicetak pada: ' . date('d-m-Y H:i:s') . '</p>';
+            $html .= '<table>';
+            $html .= '<tr><th>NIM</th><th>Nama</th><th>Jurusan</th><th>IPK</th><th>Email</th><th>No HP</th></tr>';
+            foreach ($rows as $row) {
+                $html .= '<tr>';
+                foreach ($row as $cell) {
+                    $html .= '<td>' . htmlspecialchars((string)$cell) . '</td>';
+                }
+                $html .= '</tr>';
+            }
+            $html .= '</table>';
+            $html .= '</body></html>';
+            return response($html, 200, ['Content-Type' => 'text/html']);
         }
 
         if ($format === 'excel') {
-            $content = "Export Excel belum tersedia di demo ini.\n";
-            return response($content, 200, ['Content-Type' => 'application/vnd.ms-excel', 'Content-Disposition' => 'attachment; filename="mahasiswa.xls"']);
+            $output = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">';
+            $output .= '<head><meta http-equiv="Content-type" content="text/html;charset=utf-8" /></head><body>';
+            $output .= '<table border="1">';
+            $output .= '<tr><th style="background-color: #f2f2f2;">NIM</th><th style="background-color: #f2f2f2;">Nama</th><th style="background-color: #f2f2f2;">Jurusan</th><th style="background-color: #f2f2f2;">IPK</th><th style="background-color: #f2f2f2;">Email</th><th style="background-color: #f2f2f2;">No HP</th></tr>';
+            foreach ($rows as $row) {
+                $output .= '<tr>';
+                foreach ($row as $cell) {
+                    $output .= '<td>' . htmlspecialchars((string)$cell) . '</td>';
+                }
+                $output .= '</tr>';
+            }
+            $output .= '</table></body></html>';
+            return response($output, 200, [
+                'Content-Type' => 'application/vnd.ms-excel',
+                'Content-Disposition' => 'attachment; filename="mahasiswa.xls"',
+                'Cache-Control' => 'max-age=0',
+            ]);
         }
 
         $csv = fopen('php://temp', 'r+');
